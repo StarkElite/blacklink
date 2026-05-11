@@ -476,16 +476,16 @@ app.get("/", (req, res) => {
     res.send("BLACKLINK BOT ONLINE");
 });
 
-const fs = require("fs");
+const path = require("path");
 
 app.get("/qrcode", (req, res) => {
-    const path = __dirname + "/qrcode.png";
+    const filePath = path.join(__dirname, "qrcode.png");
 
-    if (fs.existsSync(path)) {
-        res.sendFile(path);
-    } else {
-        res.send("QR Code ainda não foi gerado.");
-    }
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            res.status(404).send("QR Code ainda não foi gerado.");
+        }
+    });
 });
 
 app.listen(process.env.PORT || 3000, () => {
