@@ -6,7 +6,7 @@ const client = new Client({
 
     puppeteer: {
         headless: true,
-        executablePath: "/opt/render/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome-linux64/chrome",
+        executablePath: "/opt/render/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome",
         args: [
             "--no-sandbox",
             "--disable-setuid-sandbox",
@@ -21,8 +21,8 @@ const client = new Client({
 });
 
 client.on("qr", (qr) => {
-console.log("Escaneie o QR Code abaixo:");
-qrcode.generate(qr, { small: true });
+    console.log("Escaneie o QR Code abaixo:");
+    qrcode.generate(qr, { small: true });
 });
 
 client.on("ready", () => {
