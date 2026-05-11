@@ -1,4 +1,5 @@
 const qrcode = require("qrcode-terminal");
+const QRCode = require("qrcode");
 const { Client, LocalAuth } = require("whatsapp-web.js");
 
 const client = new Client({
@@ -13,9 +14,12 @@ const client = new Client({
     }
 });
 
-client.on("qr", (qr) => {
-    console.log("Escaneie o QR Code abaixo:");
-    qrcode.generate(qr, { small: true });
+client.on("qr", async (qr) => {
+    console.log("Gerando QR Code...");
+
+    await QRCode.toFile("qrcode.png", qr);
+
+    console.log("QR salvo em qrcode.png");
 });
 
 client.on("ready", () => {
