@@ -18,8 +18,7 @@ const client = new Client({
 });
 
 client.on("qr", (qr) => {
-    console.log("Código para conectar:");
-    console.log(qr);
+    qrcode.generate(qr, { small: true });
 });
 
 client.on("ready", () => {
