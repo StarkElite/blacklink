@@ -18,7 +18,7 @@ const client = new Client({
 });
 
 client.on("qr", (qr) => {
-    console.log("Escaneie o QR Code abaixo:");
+    console.log("Código para conectar:");
     console.log(qr);
 });
 
