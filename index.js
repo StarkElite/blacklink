@@ -476,6 +476,10 @@ app.get("/", (req, res) => {
     res.send("BLACKLINK BOT ONLINE");
 });
 
+app.get("/qrcode", (req, res) => {
+    res.sendFile(__dirname + "/qrcode.png");
+});
+
 app.listen(process.env.PORT || 3000, () => {
     console.log("Servidor HTTP online");
 });
