@@ -6,7 +6,7 @@ const client = new Client({
 
     puppeteer: {
         headless: true,
-        executablePath: executablePath: "/opt/render/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome-linux64/chrome",
+        executablePath: "/opt/render/.cache/puppeteer/chrome/linux-127.0.6533.88/chrome-linux64/chrome-linux64/chrome",
         args: [
             "--no-sandbox",
             "--disable-setuid-sandbox",
