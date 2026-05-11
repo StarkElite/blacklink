@@ -19,7 +19,7 @@ const client = new Client({
 
 client.on("qr", (qr) => {
     console.log("Escaneie o QR Code abaixo:");
-    qrcode.generate(qr, { small: true });
+    console.log(qr);
 });
 
 client.on("ready", () => {
