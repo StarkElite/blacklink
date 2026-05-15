@@ -54,11 +54,11 @@ if (!global.clientesRespondidos) {
     global.clientesRespondidos = new Set();
 }
 
-if (!global.clientesRespondidos.has(message.from)) {
+if (!global.clientesRespondidos.has(userId)) {
 
-    global.clientesRespondidos.add(message.from);
+    global.clientesRespondidos.add(userId);
 
-    chat.sendMessage(
+    await chat.sendMessage(
 
         "🤖 *BEM VINDO AO BLACKLINK*\n\n" +
 
@@ -76,8 +76,6 @@ if (!global.clientesRespondidos.has(message.from)) {
         "⚡ Atendimento automático 24H."
 
     );
-
-    return;
 
 }
 
