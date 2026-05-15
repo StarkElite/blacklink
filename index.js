@@ -48,6 +48,40 @@ if (
 
 global.lastMessages[userId] = now;
 
+
+// BOAS VINDAS
+if (!global.clientesRespondidos) {
+    global.clientesRespondidos = new Set();
+}
+
+if (!global.clientesRespondidos.has(message.from)) {
+
+    global.clientesRespondidos.add(message.from);
+
+    chat.sendMessage(
+
+        "🤖 *BEM VINDO AO BLACKLINK*\n\n" +
+
+        "🔥 Nosso sistema automático já está online.\n\n" +
+
+        "📋 *COMO USAR O BOT:*\n\n" +
+
+        "🛒 Para abrir o menu digite:\n" +
+        "/menu\n\n" +
+
+        "📦 Escolha a categoria desejada.\n\n" +
+
+        "💳 Para finalizar um pedido utilize o link do Neurox no final de cada tabela.\n\n" +
+
+        "⚡ Atendimento automático 24H."
+
+    );
+
+    return;
+
+}
+
+
 // MENU
 if (
     msg === "menu" ||
@@ -139,14 +173,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/cf4Sssz\n\n" +
 
-        "💐 _1 Grama_\n" +
-        "💰 _R$85,00_\n\n" +
-
-        "💐 _5 Gramas_\n" +
-        "💰 _R$80,00 cada g_\n\n" +
-
         "💐 _10 Gramas_\n" +
-        "💰 _R$75,00 cada g_\n\n" +
+        "💰 _R$450,00_\n\n" +
+
+        "💐 _25 Gramas_\n" +
+        "💰 _R$1.000,00_\n\n" +
+
+        "💐 _50 Gramas_\n" +
+        "💰 _R$1.750,00_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🍀 *_MAC 1_*\n" +
@@ -155,14 +189,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/TWqBYIO\n\n" +
 
-        "🌿 _1 Grama_\n" +
-        "💰 _R$70,00_\n\n" +
-
-        "🌿 _5 Gramas_\n" +
-        "💰 _R$65,00 cada g_\n\n" +
-
         "🌿 _10 Gramas_\n" +
-        "💰 _R$60,00 cada g_\n\n" +
+        "💰 _R$550,00_\n\n" +
+
+        "🌿 _25 Gramas_\n" +
+        "💰 _R$1.250,00_\n\n" +
+
+        "🌿 _50 Gramas_\n" +
+        "💰 _R$2.250,00_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "⭐ *_CLASSE A+ GOLD_*\n" +
@@ -179,9 +213,12 @@ if (
 
         "🎁 _100 Gramas_\n" +
         "💰 _R$280,00_\n\n" +
-
+        
+        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "https://wa.me/557388480568\n\n" +
+        
         "━━━━━━━━━━━━━━━\n" +
-        "🚚 *_FRETE SEDEX: R$100,00_*\n" +
+        "🚚 *_FRETE SEDEX: R$150,00_*\n" +
         "━━━━━━━━━━━━━━━",
         {
             linkPreview: false
@@ -206,14 +243,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/mz2rqBc\n\n" +
 
-        "🍬 _1 Grama_\n" +
-        "💰 _R$120,00_\n\n" +
-
-        "🍬 _5 Gramas_\n" +
-        "💰 _R$115,00 cada g_\n\n" +
-
         "🍬 _10 Gramas_\n" +
-        "💰 _R$105,00 cada g_\n\n" +
+        "💰 _R$950,00_\n\n" +
+
+        "🍬 _25 Gramas_\n" +
+        "💰 _R$2.125,00_\n\n" +
+
+        "🍬 _50 Gramas_\n" +
+        "💰 _R$4.000,00_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🍏 *_GELO NUG GREEN APPLE_*\n" +
@@ -222,14 +259,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/Tga1gSF\n\n" +
 
-        "🍫 _1 Grama_\n" +
-        "💰 _R$70,00_\n\n" +
-
-        "🍫 _5 Gramas_\n" +
-        "💰 _R$65,00 cada g_\n\n" +
-
         "🍫 _10 Gramas_\n" +
-        "💰 _R$60,00 cada g_\n\n" +
+        "💰 _R$700,00_\n\n" +
+
+        "🍫 _25 Gramas_\n" +
+        "💰 _R$1.625,00_\n\n" +
+
+        "🍫 _50 Gramas_\n" +
+        "💰 _R$3.000,00_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🌴 *_PAK TROPICANA HAZE_*\n" +
@@ -238,14 +275,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/R0GJ0k5\n\n" +
 
-        "🍪 _1 Grama_\n" +
-        "💰 _R$55,00_\n\n" +
-
-        "🍪 _5 Gramas_\n" +
-        "💰 _R$50,00 cada g_\n\n" +
-
         "🍪 _10 Gramas_\n" +
-        "💰 _R$45,00 cada g_\n\n" +
+        "💰 _R$550,00_\n\n" +
+
+        "🍪 _25 Gramas_\n" +
+        "💰 _R$1.250,00_\n\n" +
+
+        "🍪 _50 Gramas_\n" +
+        "💰 _R$2.250,00_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🍷 *_PAK RED WINE_*\n" +
@@ -254,17 +291,20 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/opdJKyA\n\n" +
 
-        "🍩 _1 Grama_\n" +
-        "💰 _R$50,00_\n\n" +
-
-        "🍩 _5 Gramas_\n" +
-        "💰 _R$45,00 cada g_\n\n" +
-
         "🍩 _10 Gramas_\n" +
-        "💰 _R$40,00 cada g_\n\n" +
+        "💰 _R$500,00_\n\n" +
 
+        "🍩 _25 Gramas_\n" +
+        "💰 _R$1.125,00_\n\n" +
+
+        "🍩 _50 Gramas_\n" +
+        "💰 _R$2.000,00_\n\n" +
+        
+        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "https://wa.me/557388480568\n\n" +
+        
         "━━━━━━━━━━━━━━━\n" +
-        "🚚 *_FRETE SEDEX: R$100,00_*\n" +
+        "🚚 *_FRETE SEDEX: R$150,00_*\n" +
         "━━━━━━━━━━━━━━━",
         {
             linkPreview: false
@@ -296,14 +336,14 @@ if (
 
         "💰 *_VALORES PARA TODAS DE 300mg:_*\n\n" +
 
-        "🍬 _5 unidades_\n" +
-        "💰 _R$40,00 cada_\n\n" +
-
-        "🍬 _10 unidades_\n" +
-        "💰 _R$35,00 cada_\n\n" +
-
         "🍬 _25 unidades_\n" +
-        "💰 _R$28,00 cada_\n\n" +
+        "💰 _R$9,00 cada_\n\n" +
+
+        "🍬 _50 unidades_\n" +
+        "💰 _R$8,00 cada_\n\n" +
+
+        "🍬 _100 unidades_\n" +
+        "💰 _R$7,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "❤️ *_LOVE 220mg MDA_*\n" +
@@ -312,14 +352,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/Sq2Y2QY\n\n" +
 
-        "💝 _5 unidades_\n" +
-        "💰 _R$35,00 cada_\n\n" +
-
-        "💝 _10 unidades_\n" +
-        "💰 _R$30,00 cada_\n\n" +
-
         "💝 _25 unidades_\n" +
-        "💰 _R$25,00 cada_\n\n" +
+        "💰 _R$6,00 cada_\n\n" +
+
+        "💝 _50 unidades_\n" +
+        "💰 _R$5,50 cada_\n\n" +
+
+        "💝 _100 unidades_\n" +
+        "💰 _R$5,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🍍 *_ABACAXI RJ LABS 300mg MDA_*\n" +
@@ -328,14 +368,14 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/Wxq1Z7s\n\n" +
 
-        "🍍 _5 unidades_\n" +
-        "💰 _R$25,00 cada_\n\n" +
-
-        "🍍 _10 unidades_\n" +
-        "💰 _R$20,00 cada_\n\n" +
-
         "🍍 _25 unidades_\n" +
-        "💰 _R$15,00 cada_\n\n" +
+        "💰 _R$8,00 cada_\n\n" +
+
+        "🍍 _50 unidades_\n" +
+        "💰 _R$7,00 cada_\n\n" +
+
+        "🍍 _100 unidades_\n" +
+        "💰 _R$6,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "💃 *_Q-DANCE 220mg MDMA_*\n" +
@@ -344,30 +384,30 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/JTEwNxZ\n\n" +
 
-        "✨ _5 unidades_\n" +
-        "💰 _R$70,00 cada_\n\n" +
-
-        "✨ _10 unidades_\n" +
-        "💰 _R$65,00 cada_\n\n" +
-
         "✨ _25 unidades_\n" +
-        "💰 _R$60,00 cada_\n\n" +
+        "💰 _R$20,00 cada_\n\n" +
+
+        "✨ _50 unidades_\n" +
+        "💰 _R$18,00 cada_\n\n" +
+
+        "✨ _100 unidades_\n" +
+        "💰 _R$16,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
-        "🤍 *_ECRU WHITE 200mg MDMA_*\n" +
+        "🤍 *_ECRU WHITE 250mg MDMA_*\n" +
         "━━━━━━━━━━━━━━━\n\n" +
 
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/udYMsau\n\n" +
 
-        "🤍 _5 unidades_\n" +
-        "💰 _R$85,00 cada_\n\n" +
-
-        "🤍 _10 unidades_\n" +
-        "💰 _R$80,00 cada_\n\n" +
-
         "🤍 _25 unidades_\n" +
-        "💰 _R$75,00 cada_\n\n" +
+        "💰 _R$28,00 cada_\n\n" +
+
+        "🤍 _50 unidades_\n" +
+        "💰 _R$26,00 cada_\n\n" +
+
+        "🤍 _100 unidades_\n" +
+        "💰 _R$24,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🍯 *_MDMA ECRU_*\n" +
@@ -376,17 +416,20 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/yBmemFn\n\n" +
 
-        "🍯 _1 Grama_\n" +
-        "💰 _R$230,00_\n\n" +
-
-        "🍯 _5 Gramas_\n" +
-        "💰 _R$200,00 cada g_\n\n" +
-
         "🍯 _10 Gramas_\n" +
-        "💰 _R$180,00 cada g_\n\n" +
+        "💰 _R$120,00 cada g_\n\n" +
 
+        "🍯 _25 Gramas_\n" +
+        "💰 _R$95,00 cada g_\n\n" +
+
+        "🍯 _100 Gramas_\n" +
+        "💰 _R$90,00 cada g_\n\n" +
+        
+        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "https://wa.me/557388480568\n\n" +
+        
         "━━━━━━━━━━━━━━━\n" +
-        "🚚 *_FRETE SEDEX: R$100,00_*\n" +
+        "🚚 *_FRETE SEDEX: R$150,00_*\n" +
         "━━━━━━━━━━━━━━━",
         {
             linkPreview: false
@@ -411,11 +454,11 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/nWiKtch\n\n" +
 
-        "🍬 _5 unidades_\n" +
-        "💰 _R$45,00 cada_\n\n" +
+        "🍬 _1 Card_\n" +
+        "💰 _R$400,00_\n\n" +
 
-        "🍬 _10 unidades_\n" +
-        "💰 _R$40,00 cada_\n\n" +
+        "🍬 _5 Cards_\n" +
+        "💰 _R$370,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🐷 *_FLYPIG 400ug_*\n" +
@@ -424,11 +467,11 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/HCpHA6y\n\n" +
 
-        "🍭 _5 unidades_\n" +
-        "💰 _R$55,00 cada_\n\n" +
+        "🍭 _1 Card_\n" +
+        "💰 _R$500,00_\n\n" +
 
-        "🍭 _10 unidades_\n" +
-        "💰 _R$50,00 cada_\n\n" +
+        "🍭 _5 Crads_\n" +
+        "💰 _R$470,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "✨ *_JESUS 500ug_*\n" +
@@ -437,11 +480,11 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/Qta2Ub9\n\n" +
 
-        "🍫 _5 unidades_\n" +
-        "💰 _R$65,00 cada_\n\n" +
+        "🍫 _1 Card_\n" +
+        "💰 _R$600,00_\n\n" +
 
-        "🍫 _10 unidades_\n" +
-        "💰 _R$60,00 cada_\n\n" +
+        "🍫 _5 Crads_\n" +
+        "💰 _R$560,00 cada_\n\n" +
 
         "━━━━━━━━━━━━━━━\n" +
         "🎩 *_DR.SEUS CAT IN THE HAT 200ug_*\n" +
@@ -450,14 +493,17 @@ if (
         "🖼️ *_MÍDIA:_*\n" +
         "https://imgur.com/a/pwjrMTW\n\n" +
 
-        "🎁 _5 unidades_\n" +
-        "💰 _R$120,00 cada_\n\n" +
+        "🎁 _1 Card_\n" +
+        "💰 _R$750,00_\n\n" +
 
-        "🎁 _10 unidades_\n" +
-        "💰 _R$110,00 cada_\n\n" +
-
+        "🎁 _5 Cards_\n" +
+        "💰 _R$720,00 cada_\n\n" +
+        
+        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "https://wa.me/557388480568\n\n" +
+        
         "━━━━━━━━━━━━━━━\n" +
-        "🚚 *_FRETE SEDEX: R$100,00_*\n" +
+        "🚚 *_FRETE LSD SEDEX: R$50,00_*\n" +
         "━━━━━━━━━━━━━━━",
         {
             linkPreview: false
