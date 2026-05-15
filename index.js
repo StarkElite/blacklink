@@ -49,20 +49,20 @@ client.on("message_create", async (message) => {
 
         await chat.sendMessage(
 
-            "🤖 *BEM VINDO AO BLACKLINK*\n\n" +
+            "🤖 *_BEM VINDO AO BLACKLINK_*\n\n" +
 
-            "🔥 Nosso sistema automático já está online.\n\n" +
+            "🔥 _Nosso sistema automático já está online._\n\n" +
 
-            "📋 *COMO USAR O BOT:*\n\n" +
+            "📋 *_COMO USAR O BOT:_*\n\n" +
 
-            "🛒 Para abrir o menu digite:\n" +
-            "/menu\n\n" +
+            "🛒 _Para abrir o menu digite:_\n" +
+            "_/menu_\n\n" +
 
-            "📦 Escolha a categoria desejada.\n\n" +
+            "📦 _Escolha a categoria desejada._\n\n" +
 
-            "💳 Para finalizar um pedido utilize o link do Neurox no final de cada tabela.\n\n" +
+            "💳 _Para finalizar um pedido utilize o link do Neurox no final de cada tabela._\n\n" +
 
-            "⚡ Atendimento automático 24H."
+            "⚡ _Atendimento automático 24H._"
 
         );
 
