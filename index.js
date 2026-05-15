@@ -34,22 +34,8 @@ client.on("message", async (message) => {
     const msg = message.body.toLowerCase().trim();
     const chat = await message.getChat();
 
-    // ANTI-SPAM
-    if (!global.lastMessages) {
-        global.lastMessages = {};
-    }
 
     const userId = message.from;
-    const now = Date.now();
-
-    if (
-        global.lastMessages[userId] &&
-        now - global.lastMessages[userId] < 1000
-    ) {
-        return;
-    }
-
-    global.lastMessages[userId] = now;
 
 
     // BOAS VINDAS
