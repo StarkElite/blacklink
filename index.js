@@ -28,89 +28,94 @@ console.log("🟢 BLACKLINK BOT ONLINE");
 
 client.on("message", async (message) => {
 
-const msg = message.body.toLowerCase();
-const chat = await message.getChat();
+    // IGNORA GRUPOS
+    if (message.from.includes("@g.us")) return;
 
-// ANTI-SPAM
-if (!global.lastMessages) {
-    global.lastMessages = {};
-}
+    const msg = message.body.toLowerCase().trim();
+    const chat = await message.getChat();
 
-const userId = message.from;
-const now = Date.now();
+    // ANTI-SPAM
+    if (!global.lastMessages) {
+        global.lastMessages = {};
+    }
 
-if (
-    global.lastMessages[userId] &&
-    now - global.lastMessages[userId] < 3000
-) {
-    return;
-}
+    const userId = message.from;
+    const now = Date.now();
 
-global.lastMessages[userId] = now;
+    if (
+        global.lastMessages[userId] &&
+        now - global.lastMessages[userId] < 1000
+    ) {
+        return;
+    }
 
-
-// BOAS VINDAS
-if (!global.clientesRespondidos) {
-    global.clientesRespondidos = new Set();
-}
-
-if (!global.clientesRespondidos.has(userId)) {
-
-    global.clientesRespondidos.add(userId);
-
-    await chat.sendMessage(
-
-        "🤖 *BEM VINDO AO BLACKLINK*\n\n" +
-
-        "🔥 Nosso sistema automático já está online.\n\n" +
-
-        "📋 *COMO USAR O BOT:*\n\n" +
-
-        "🛒 Para abrir o menu digite:\n" +
-        "/menu\n\n" +
-
-        "📦 Escolha a categoria desejada.\n\n" +
-
-        "💳 Para finalizar um pedido utilize o link do Neurox no final de cada tabela.\n\n" +
-
-        "⚡ Atendimento automático 24H."
-
-    );
-
-}
+    global.lastMessages[userId] = now;
 
 
-// MENU
-if (
-    msg === "menu" ||
-    msg === "/menu" ||
-    msg === "oi"
-) {
+    // BOAS VINDAS
+    if (!global.clientesRespondidos) {
+        global.clientesRespondidos = new Set();
+    }
 
-    chat.sendMessage(
-        "╔════════════════╗\n" +
-        "🔥 *_BLACKLINK BOT_* 🔥\n" +
-        "╚════════════════╝\n\n" +
+    if (!global.clientesRespondidos.has(userId)) {
 
-        "📦 *_PRODUTOS DISPONÍVEIS_*\n\n" +
+        global.clientesRespondidos.add(userId);
 
-        "🌹 1 • _Cannabis_\n" +
-        "🍫 2 • _Extrações_\n" +
-        "🍬 3 • _Ecstasys_\n" +
-        "🍭 4 • _LSD_\n\n" +
+        await chat.sendMessage(
 
-        "━━━━━━━━━━━━━━━\n" +
-        "📋 *_COMANDOS_*\n" +
-        "━━━━━━━━━━━━━━━\n\n" +
+            "🤖 *BEM VINDO AO BLACKLINK*\n\n" +
 
-        "📌 _/menu_\n" +
-        "❓ _/ajuda_\n" +
-        "🚚 _/frete_\n" +
-        "🛠️ _/suporte_\n\n" +
+            "🔥 Nosso sistema automático já está online.\n\n" +
 
-        "🛒 *_Digite o número ou nome do produto._*"
-    );
-}
+            "📋 *COMO USAR O BOT:*\n\n" +
+
+            "🛒 Para abrir o menu digite:\n" +
+            "/menu\n\n" +
+
+            "📦 Escolha a categoria desejada.\n\n" +
+
+            "💳 Para finalizar um pedido utilize o link do Neurox no final de cada tabela.\n\n" +
+
+            "⚡ Atendimento automático 24H."
+
+        );
+
+    }
+
+
+    // MENU
+    if (
+        msg === "menu" ||
+        msg === "/menu" ||
+        msg === "oi"
+    ) {
+
+        await chat.sendMessage(
+            "╔════════════════╗\n" +
+            "🔥 *_BLACKLINK BOT_* 🔥\n" +
+            "╚════════════════╝\n\n" +
+
+            "📦 *_PRODUTOS DISPONÍVEIS_*\n\n" +
+
+            "🌹 1 • _Cannabis_\n" +
+            "🍫 2 • _Extrações_\n" +
+            "🍬 3 • _Ecstasys_\n" +
+            "🍭 4 • _LSD_\n\n" +
+
+            "━━━━━━━━━━━━━━━\n" +
+            "📋 *_COMANDOS_*\n" +
+            "━━━━━━━━━━━━━━━\n\n" +
+
+            "📌 _/menu_\n" +
+            "❓ _/ajuda_\n" +
+            "🚚 _/frete_\n" +
+            "🛠️ _/suporte_\n\n" +
+
+            "🛒 *_Digite o número ou nome do produto._*"
+        );
+    }
+
+});
 
 // AJUDA
 if (
