@@ -112,10 +112,9 @@ client.on("message", async (message) => {
             "🛠️ _/suporte_\n\n" +
 
             "🛒 *_Digite o número ou nome do produto._*"
-        );
+               );
     }
 
-});
 
 // AJUDA
 if (
@@ -217,7 +216,7 @@ if (
         "🎁 _100 Gramas_\n" +
         "💰 _R$280,00_\n\n" +
         
-        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "🛒 *_PEDIDOS E PAGAMENTO:_*\n" +
         "https://wa.me/557388480568\n\n" +
         
         "━━━━━━━━━━━━━━━\n" +
@@ -303,7 +302,7 @@ if (
         "🍩 _50 Gramas_\n" +
         "💰 _R$2.000,00_\n\n" +
         
-        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "🛒 *_PEDIDOS E PAGAMENTO:_*\n" +
         "https://wa.me/557388480568\n\n" +
         
         "━━━━━━━━━━━━━━━\n" +
@@ -428,7 +427,7 @@ if (
         "🍯 _100 Gramas_\n" +
         "💰 _R$90,00 cada g_\n\n" +
         
-        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "🛒 *_PEDIDOS E PAGAMENTO:_*\n" +
         "https://wa.me/557388480568\n\n" +
         
         "━━━━━━━━━━━━━━━\n" +
@@ -502,13 +501,13 @@ if (
         "🎁 _5 Cards_\n" +
         "💰 _R$720,00 cada_\n\n" +
         
-        "🛒 *PEDIDOS E PAGAMENTO:*\n" +
+        "🛒 *_PEDIDOS E PAGAMENTO:_*\n" +
         "https://wa.me/557388480568\n\n" +
         
         "━━━━━━━━━━━━━━━\n" +
         "🚚 *_FRETE LSD SEDEX: R$50,00_*\n" +
         "━━━━━━━━━━━━━━━",
-        {
+                {
             linkPreview: false
         }
     );
