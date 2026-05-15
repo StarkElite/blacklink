@@ -26,8 +26,8 @@ client.on("ready", () => {
 console.log("🟢 BLACKLINK BOT ONLINE");
 });
 
-client.on("message", async (message) => {
-
+client.on("message_create", async (message) => {
+    
     // IGNORA GRUPOS
     if (message.from.includes("@g.us")) return;
 
